@@ -7,6 +7,13 @@ import 'package:command_runner/command_runner.dart';
 const version = '0.0.1';
 
 void main(List<String> arguments) async {
-  var runner = CommandRunner(); // Create an instance of you new CommandRunner
-  await runner.run(arguments); // Call its run method, awaiting its Future<void>
+  final verboseOption = Option(
+    'verbose',
+    type: OptionType.flag,
+    abbr: 'v',
+    help: 'Display extra logging information',
+  );
+
+  print('Defined option: ${verboseOption.name}');
+  print('Usage: ${verboseOption.usage}');
 }
